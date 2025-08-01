@@ -204,14 +204,85 @@ footer {
 
 .issue-card {
   background: white;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #003366;
 }
 
-.issue-card h3 {
-  margin-bottom: 0.5rem;
+.issue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.issue-header h3 {
+  margin: 0;
+  color: #003366;
+}
+
+.status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status.pending {
+  background-color: #ffeaa7;
+  color: #d63031;
+}
+
+.status.resolved {
+  background-color: #00b894;
+  color: white;
+}
+
+.status.in-progress {
+  background-color: #74b9ff;
+  color: white;
+}
+
+.description {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.issue-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  flex-wrap: wrap;
+}
+
+.issue-image {
+  max-width: 200px;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.no-issues {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #d63031;
 }
 
 .contact-container {
@@ -223,32 +294,86 @@ footer {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.contact-form-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.contact-form-section h2 {
+  margin-bottom: 1rem;
+  color: #003366;
+}
+
+.contact-info {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
 .contact-container label {
   display: block;
   margin-top: 1rem;
 }
 
 .contact-container input,
-.contact-container textarea {
+.contact-container textarea,
+.main-content input,
+.main-content textarea,
+.main-content select {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.75rem;
   margin-top: 0.5rem;
+  margin-bottom: 1rem;
   border-radius: 5px;
   border: 1px solid #ccc;
+  font-family: inherit;
+  box-sizing: border-box;
 }
 
-.contact-container button {
-  margin-top: 1.5rem;
+.contact-container button,
+.main-content button {
+  margin-top: 1rem;
   background-color: #003366;
   color: white;
-  padding: 0.6rem 1.2rem;
+  padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
+  width: 100%;
 }
 
-.contact-container button:hover {
+.contact-container button:hover,
+.main-content button:hover {
   background-color: #0055aa;
+}
+
+.profile-details {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.profile-details p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.profile-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.profile-actions button {
+  background-color: #d63031;
+  width: auto;
+  padding: 0.5rem 2rem;
+}
+
+.profile-actions button:hover {
+  background-color: #e17055;
 }

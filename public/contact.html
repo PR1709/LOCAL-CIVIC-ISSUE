@@ -10,18 +10,31 @@
 <div class="navbar">
 <h2>Civic Reporter</h2>
 <ul>
-<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="main.html">Dashboard</a></li>
 <li><a href="profile.html">Profile</a></li>
 <li><a href="report.html">Report an Issue</a></li>
 <li><a href="view-issues.html">View Issues</a></li>
 <li><a href="contact.html">Contact & Help</a></li>
+<li><a href="/logout">Logout</a></li>
 </ul>
 </div>
 <div class="main-content">
 <h1>Contact & Help</h1>
+<div class="contact-info">
 <p>If you face any issues, please reach out to:</p>
 <p><strong>Email:</strong> support@civicreport.gov.in</p>
 <p><strong>Helpline:</strong> +91 852 005 8226</p>
+</div>
+
+<div class="contact-form-section">
+<h2>Send us a message</h2>
+<form action="/contact" method="POST">
+<input type="text" name="name" placeholder="Your Name" required />
+<input type="email" name="email" placeholder="Your Email" required />
+<textarea name="message" placeholder="Your message..." required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</div>
 </div>
 </body>
 </html>
