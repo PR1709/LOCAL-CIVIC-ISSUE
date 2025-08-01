@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>View Issues</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg">
+<div class="navbar">
+<h2>Civic Reporter</h2>
+<ul>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="profile.html">Profile</a></li>
+<li><a href="report.html">Report an Issue</a></li>
+<li><a href="view-issues.html">View Issues</a></li>
+<li><a href="contact.html">Contact & Help</a></li>
+</ul>
+</div>
+<div class="main-content">
+<h1>Reported Issues</h1>
+<ul class="issue-list">
+<li><strong>Pothole</strong> – Main Road, AP – Pending</li>
+<li><strong>Garbage Dump</strong> – Lane 3, Vijayawada – In Progress</li>
+<li><strong>Broken Street Light</strong> – Sector 5 – Resolved</li>
+</ul>
+</div>
+</body>
+<div id="issues-container"></div>
+<script>
+fetch("/issues")
+.then(res => res.json())
+.then(data => {
+const container = document.getElementById("issues-container");
+container.innerHTML = data.map(issue => `
+<div class="issue-card">
+<h3>${issue.category}</h3>
+<p>${issue.description}</p>
+<small>${issue.location} | ${new Date(issue.createdAt).toLocaleString()}</small>
+</div>
+`).join("");
+});
+</script>
+
+</html>
